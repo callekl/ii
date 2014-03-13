@@ -1,0 +1,22 @@
+﻿@model IEnumerable<IIProjectClient.Models.Location>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form action="/Client" method="post">
+
+    <select name="location">
+    @foreach(var item in Model){
+    <option id="location" value="@item.Epc">@item.Name</option>
+    }
+    </select>
+    <input id="fromTime" type="text" name="fromTime" class="s" />
+    <input id="toTime" type="text" name="toTime" class="s" />
+
+    <input id="Search" type="submit" class="b" value="Sök" />
+</form>
+
+
